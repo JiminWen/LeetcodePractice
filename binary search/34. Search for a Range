@@ -1,0 +1,35 @@
+public class Solution {
+    public int[] searchRange(int[] nums, int target) {
+        int[] res={-1,-1};
+        if (nums==null||nums.length==0){
+            return res;
+        }
+        int ll=0,lr=nums.length-1;
+        int mid;
+        while(ll<=lr){
+            mid=(ll+lr)/2;
+            if(nums[mid]<target){
+                ll=mid+1;
+            }
+            else{
+                lr=mid-1;
+            }
+        }
+        int rl=0,rr=nums.length-1;
+        while(rl<=rr){
+            mid=(rl+rr)/2;
+            if(nums[mid]>target){
+                rr=mid-1;
+            }
+            else{
+                rl=mid+1;
+            }
+            
+        }
+        if(ll<=rr){
+        res[0]=ll;
+        res[1]=rr;
+        }
+        return res;
+    }
+}
