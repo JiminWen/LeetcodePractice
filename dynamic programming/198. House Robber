@@ -1,0 +1,15 @@
+public class Solution {
+    public int rob(int[] nums) {
+    if(nums==null||nums.length==0){
+        return 0;
+    }    
+    int unlocal=0,local=nums[0],globle=nums[0];
+    for(int i=1;i<=nums.length-1;++i){
+        local=unlocal+nums[i];
+        unlocal=globle;
+        globle=Math.max(globle,Math.max(local,unlocal));
+        
+    }
+    return globle;
+    }
+}
