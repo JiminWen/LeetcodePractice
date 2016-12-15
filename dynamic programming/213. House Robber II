@@ -1,0 +1,19 @@
+public class Solution {
+    public int rob(int[] nums) {
+    if(nums==null||nums.length==0){
+        return 0;
+    }
+    return Math.max(maxrob(nums,0,nums.length-2),maxrob(nums,1,nums.length-1));
+    }
+    public int maxrob(int[] nums,int low,int high) {
+    if(nums.length==1) return nums[0];
+    int unlocal=0,local=nums[low],globle=nums[low];
+    for(int i=1+low;i<=high;++i){
+        local=unlocal+nums[i];
+        unlocal=globle;
+        globle=Math.max(globle,Math.max(local,unlocal));
+        
+    }
+    return globle;
+    }
+}
