@@ -1,0 +1,2 @@
+1. Inorder traversal is common in BST probelms.
+2. Use helper to change parameters.

@@ -1,0 +1,12 @@
+1. Double pointer mathod is the most powerful tool.
+	ex1 insertion: pre records the position to be inserted, cur records the position to insert.
+		ListNode temp=cur.next.next;
+		cur.next.next=pre.next;
+		pre.next=cur.next;
+		cur.next=temp;
+		cur=temp;
+		
+	ex2 swap: Swap the element after the pre and cur (Simply swap the value between them)
+		int temp=pre.next.val;
+		pre.next.val=cur.next.val;
+		cur.next.val=temp;
