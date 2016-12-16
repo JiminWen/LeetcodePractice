@@ -1,2 +1,2 @@
-1. Learn using BS to find minimum and maximum target index.
-2. How to find the return element: Just consider the last case(when l==r).
+1. Learn to use BS to find minimum target and maximum target index.
+2.

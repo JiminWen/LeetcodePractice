@@ -10,3 +10,5 @@
 		int temp=pre.next.val;
 		pre.next.val=cur.next.val;
 		cur.next.val=temp;
+
+2.Boundary case: Always check whether a ListNode is null before using .next or .val.
