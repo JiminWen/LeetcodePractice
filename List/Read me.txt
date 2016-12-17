@@ -11,4 +11,6 @@
 		pre.next.val=cur.next.val;
 		cur.next.val=temp;
 
+	ex3: Insertion sort list(question 147)
+
 2.Boundary case: Always check whether a ListNode is null before using .next or .val.
