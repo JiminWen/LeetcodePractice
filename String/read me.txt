@@ -1,0 +1,9 @@
+1. Use string builder to do operation on string
+   then String str=new String(char[]);
+2. check anagram:
+   char[] c=s.toCharArray();
+   Arrays.sort(char);
+   Arrays.equals(xx,xxx);
+3. Use hashmap to store <key,list> to group array of string
+4. Covert char to int: int temp=char a + char b;
+   Covert int to char:(need force convertion) char temp=(char )int m+ int n;

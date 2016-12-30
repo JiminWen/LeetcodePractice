@@ -14,3 +14,5 @@
 	ex3: Insertion sort list(question 147)
 
 2.Boundary case: Always check whether a ListNode is null before using .next or .val.
+
+3. Usually create a null linkedlist and connect it to the head. Because the head of the linkedlist might change during the operation.
