@@ -1,0 +1,35 @@
+Leetcode 234: palindrome linked list
+After the reversed second half, has been got, in the while loop of comparison between the first half and second half. Remember to iterate.
+while(head!=null){
+        if(head.val!=second.val) return false;
+        head=head.next;
+        second=second.next;
+}
+Otherwise there will be time running out error.
+
+
+Leetcode 459: Repeated substring pattern
+When all the attempts fail, should return false.
+
+Leetcode 160. Intersection of Two Linked Lists
+1. When compare two listnode, should use l1==l2 because there might be two different nodes sharing the same value.
+2. When nodes meet end, must stay at null for one period.
+
+Leetcode 414. Third Maximum Number
+Remember to maintain the hashset by adding new items into it.
+
+155. Min Stack
+public void pop() {
+        if(!minstack.isEmpty()&&stack.peek()==getMin()){
+                // if(minstack.getLast()==stack.getLast()){
+
+            minstack.pop();
+            
+        }
+        stack.pop();
+        
+    }
+Not working when using minstack.peek() instead of getMin()    
+
+121. Best Time to Buy and Sell Stock
+Init values
