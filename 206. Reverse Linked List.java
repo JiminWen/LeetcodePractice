@@ -8,16 +8,15 @@
  */
 public class Solution {
     public ListNode reverseList(ListNode head) {
-    if(head==null){
-        return null;
+    if(head==null) return null;
+//    ListNode root=new ListNode(0);
+    ListNode pre=null,next=null,cur=head;
+    while(cur!=null){
+        next=cur.next;
+        cur.next=pre;
+        pre=cur;
+        cur=next;
     }
-    if(head.next==null){
-        return head;
-    }
-    ListNode second=head.next;
-    head.next=null;
-    ListNode temp=reverseList(second);
-    second.next=head;
-    return temp;
+    return pre;
     }
 }
