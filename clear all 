@@ -1,0 +1,48 @@
+clear all 
+clc
+close all
+ 
+A=[4 3 1 4; 2 5 6 3; 1 0 7 0]; %Problem 1
+ 
+[x_row y_column]=size(A);
+x_num(1)=1;
+for i=2:x_row
+    x_num(i,1)=0;
+end
+y_num(1)=1;
+for i=2:y_column
+    y_num(i,1)=0;
+end
+num = 0;
+for k=1:1000
+    x(:,k)=x_num/k;
+    y(:,k)=y_num/k;
+    % Expected payoffs to P1 and P2;
+    v=A*y(:,k);
+    u=x(:,k)'*A;
+    % Find the pure strategies of P1 and P2 that yield the maximum payoff
+    [max_v x_idx]=max(v);
+    [min_u y_idx]=min(u);
+    %Stop if the duality gap is zero
+    num=num+1;
+    if max_v==min_u,
+        break; 
+    end
+    % Assign more weight on the pure strategy yielding the maximum payoff
+    x_num(x_idx)=x_num(x_idx)+1;
+    y_num(y_idx)=y_num(y_idx)+1;
+end
+ 
+for i=1:k
+    k_idx(i)=i;
+end
+figure(1)
+plot(k_idx,x(1,:),'b',k_idx,x(2,:),'r',k_idx,x(3,:),'g');
+legend('x1','x2','x3');
+figure(2)
+plot(k_idx,y(1,:),'b',k_idx,y(2,:),'r',k_idx,y(3,:),'g',k_idx,y(4,:),'y');
+legend('y1','y2','y3','y4');
+%num
+x(:,k) 
+y(:,k)
+[max_v min_u]
